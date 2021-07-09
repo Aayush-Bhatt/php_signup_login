@@ -1,3 +1,20 @@
+<?php
+require_once('Config.php');
+if(!empty($_POST))
+{
+	
+	$sql = mysqli_query($al, "INSERT INTO users(name,email,phone,city,state,signupfor,fileToUpload,password) VALUES('".mysqli_real_escape_string($al,$_POST['name'])."',
+	'".mysqli_real_escape_string($al,$_POST['email'])."','".mysqli_real_escape_string($al,$_POST['phone'])."','".mysqli_real_escape_string($al,$_POST['city'])."','".mysqli_real_escape_string($al,$_POST['state'])."','".mysqli_real_escape_string($al,$_POST['name'])."','".mysqli_real_escape_string($al,$_POST['fileToUpload'])."','".mysqli_real_escape_string($al,sha1($_POST['pass']))."')");
+	if($sql)
+	{
+		$msg = "Successfully Registered... you can login now";
+	}
+	else
+	{
+		$msg = "Error in Registration";
+	}
+}
+?>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
