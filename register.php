@@ -50,7 +50,8 @@ body{
 <br>
 <h1>Registration Form</h1>
 <br>
-<h3><?php if(isset($msg)) { echo $msg.mysqli_error($al); }?></h3>
+<h3>
+<?php if(isset($msg)) { echo $msg.mysqli_error($al); }?></h3>
 
 <br>
 <div class="form-structor">
@@ -59,27 +60,27 @@ body{
 <br>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">
 <div class="form-holder">
-<input type="text" name="name" size="25" required title="Please Enter Name" placeholder="Your full name" />
+<input type="text" name="name" size="27" required title="Please Enter Name" placeholder="Your full name" />
 <br>
 <br>
-<input type="email" name="email" size="25" required title="Enter Email" placeholder="Email id " />
+<input type="email" name="email" size="27" required title="Enter Email" placeholder="Email id " />
 <br>
 <br>
-<input type="text" name="phone" size="25" required title="Enter Phone no." placeholder="Phone No."/>
+<input type="text" name="phone" size="27" required title="Enter Phone no." placeholder="Phone No."/>
 <br>
 <br>
-<input type="text" name="city" size="25" required title="Enter City Name" placeholder="City"/>
+<input type="text" name="city" size="27" required title="Enter City Name" placeholder="City"/>
 <br>
 <br>
-<input type="text" name="state" size="25" required title="Enter State Name" placeholder="State"/>
+<input type="text" name="state" size="27" required title="Enter State Name" placeholder="State"/>
 <br>
 <br>
-<input type="text" name="signupfor" size="25" required title="sign up for" placeholder="Signing up for?"/>
+<input type="text" name="signupfor" size="27" required title="sign up for" placeholder="Signing up for?"/>
 <br><br>
 <label for="fileToUpload">Upload your Profile picture </label>
 <input type="file" name="fileToUpload" id="fileToUpload">
 <br><br>
-<input type="password" name="pass" size="25" required title="Set password" placeholder="Set password"/>
+<input type="password" name="pass" size="27" required title="Set password" placeholder="Set password"/>
 </div>
 <br>
 <input class="btn btn-primary" type="submit" value="Register" />
