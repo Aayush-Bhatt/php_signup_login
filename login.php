@@ -1,3 +1,24 @@
+<?php
+require_once('Config.php');
+session_start();
+if(isset($_SESSION['email']))
+{
+	header("location:home.php");
+}
+if(!empty($_POST))
+{
+	$sql = mysqli_query($al, "SELECT * FROM users WHERE email = '".mysqli_real_escape_string($al, $_POST['email'])."' AND password = '".mysqli_real_escape_string($al,sha1($_POST['pass']))."'");
+	if(mysqli_num_rows($sql) == 1)
+	{
+		$_SESSION['email'] = $_POST['email'];
+		header("location:home.php");
+	}
+	else
+	{
+		$msg = "Incorrect Credentials";
+	}
+}
+?>
 <!doctype html>
 <html>
 <head>
